@@ -1,0 +1,228 @@
+/*
+Con :root podemos crear y utilizar variables y el alcance de estás
+se encuentra en el archivo de css donde se hayan declarado o bien también
+en las hojas que estén vinculadas en el documento html principal.
+ */
+ :root {
+  --main-text-color: #030202;
+  --green: #74971F;
+  --yellow: #F4B10D;
+  --secondary-green: #346E16;
+  --gray: #9090A7;
+  --secondary-gray: #545870;
+}
+
+/* 
+
+*{} Sirve para decir que quermos aplicar los estilos que esten dentro de las llaves
+a todo el documento html (jueguen con los valores y parámetros y vean que pasa)
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Usando @font-face con sus respectivos parámetros podemos importar y usar la fuente que tengamos localmente en este caso Rubik */
+@font-face {
+  font-family: 'Rubik';
+  src: url("RubikMonoOne-Regular.ttf");
+}
+
+body {font-family: Helvetica, Arial,  sans-serif;}
+h1, h2 {font-family: 'Rubik';}
+a {
+  /* Quitamos el underline que trae por default el enlace (a) */
+  text-decoration: none; 
+  color: var(--main-text-color);
+  /* Asignamos un borde inferior transparete */
+  border-bottom: 1px solid transparent;
+}
+
+/*
+Con :hover indicamos que cuando el usuario pase el mouse por
+el elemento esté ejecutara lo que esté dentro de las llaves.
+*/
+a:hover {
+  /* Asiganamos un color al borde creado anteriormente, al pasar el mouse (propiedad :hover) */
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+/* EMPIEZAN ESTILOS PARA EL TOPBAR */
+
+header {
+  /* Determinaos que el header ocupe el toda la altura de la panatalla (se ajusta a cualquier panatalla) */
+  height: 100vh;
+  background-image: url("img/bg.png"); /* Determinamos la ruta de la imagen en este caso se encuentra en la misma carpeta */
+  background-position: bottom; 
+  background-repeat: repeat-x; /* Con repeat-x logramos que se repita sobre el eje x en ambas direcciones */
+  background-size: 500px;
+}
+
+/* 
+  NOTA: EXISTEN MUCHOS TIPOS DE DISPLAY, ACTUALMENTE LOS
+  MÁS UTILIZADOS POR SU ALCANCE SON DISPLAY Y GRID, SI GUSTAN
+  PUEDEN INVESTIGAR COMO ES QUE FUNCIONAN EN LOS SIGUIENTES LINKS:
+  Display: https://www.w3schools.com/cssref/pr_class_display.php
+  Flexbox: https://www.w3schools.com/css/css3_flexbox.asp
+  Grid: https://www.w3schools.com/css/css_grid.asp
+*/
+
+header nav {
+  width: 90%;
+  margin: auto;
+  padding: 16px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+header nav .logo .circle {
+  height: 50px;
+  width: 50px;
+  /* Asignamos un 50% para que el cuadrado de vuela el circulo */
+  border-radius: 50%;
+  background-color: #f4b10d;
+}
+header nav .logo h1 {
+  /*
+  Documentación acerca de tipos de position:
+  https://www.w3schools.com/css/css_positioning.asp
+  En este caso usamos relative para que el elemento hijo se pueda desplazar por el padre
+  en este caso que el título h1 se desplace por el nav para así hacer una intersección
+  con el .cirlcle (el circulo amarillo en la barra superior)
+  */
+  position: relative;
+  left: -25px; 
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+header nav ul li {margin-left: 44px;}
+/* /////////////////////////////// */
+
+
+/* EMPIEZAN ESTILOS DEL TITULO PRINCIPAL EN HEADER */
+
+header .content {
+  width: 90%;
+  margin: auto;
+}
+
+header .content h2 {
+  padding-top: 58px;
+  width: 100%;
+  color: var(--green);
+  font-size: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+header .content h2 div {
+  display: flex;
+  align-self: flex-end;
+  color: var(--yellow);
+  position: relative;
+  right: 0;
+}
+header .content .beneficts-circles {
+  display: flex;
+  flex-direction: row;
+}
+header .content .beneficts-circles .benefict-circle {
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+header .content .beneficts-circles .benefict-circle .img {
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+  margin-right: 8px;
+  background-position: center; /* Centramos cualquier elemento que pongamos en el background */
+  background-repeat: no-repeat; /* Indicamos que no queremos que se repita el fondo */
+  background-size: 35px; /* Asignamos un tamaño al background en este caso le asiganamos un tamaño a la imagen */
+}
+header .content .beneficts-circles .benefict-circle .dec {font-weight: bold;}
+
+/*
+EL # SE USA PARA INDICAR QUE SE TRATA DE UN ID Y NO UNA CLASE CLASS (.)
+EN ESTE CASO ACCEDEMOS A CADA ELEMENTO CON SU RESPECTIVO ID Y PONEMOS LA IMAGEN 
+QUE CORRESPONDE A CADA CIRCULO
+*/
+#img-1 {
+  /* Asignamos un color de fondo al circulo */
+  background-color: var(--green);
+  background-image: url("img/img-1.png");
+}
+#img-2 {
+  background-color: var(--yellow);
+  background-image: url("img/img-2.png");
+}
+#img-3 {
+  background-color: var(--green);
+  background-image: url("img/img-3.png");
+}
+
+/* /////ABOUT US */
+
+/* 
+Con está coma le decimos a css que aplique los estilos dentro de las {}
+a los elemento que indiquemos, en este caso: #about-us, #section-form reciben
+los mismos estilos, evitando repetir código.*/
+#about-us, #section-form {
+  height: 100vh;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+#about-us h2, #section-form h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+#about-us p {
+  margin-top: 30px;
+}
+
+/* ////// GET IN TOUCH */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+form input, textarea {
+  font-size: 18px;
+  padding: 12px 4px;
+  margin-bottom: 16px;
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+
+}
+
+/* ////// FOOTER */
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 0px;
+  color: #fff;
+  background-color: var(--secondary-gray);
+}
