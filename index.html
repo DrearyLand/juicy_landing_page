@@ -1,51 +1,97 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Fruit Juices 100% Cold-Pressed</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+    <title>JUIZY | Landing page</title>
+</head>
+<body>
     <header>
-      <h1>Juicy Co.</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="logo">
+                <div class="circle"></div>
+                <h1>JUIZY</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="#about-us">About</a>
+                </li>
+                <li>
+                    <a href="">Beneficts</a>
+                </li>
+                <li>
+                    <a href="#section-form">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h2>FRESH & COOL <div>JUICE</div></h2>
+            <div class="beneficts-circles">
+                <!-- Vitamins -->
+                <div class="benefict-circle">
+                    <div class="img" id="img-1"></div>
+                    <div class="desc">Vitamins</div>
+                </div>
+                <!-- Low calories -->
+                <div class="benefict-circle">
+                    <div class="img" id="img-2"></div>
+                    <div class="desc">Low calories</div>
+                </div>
+                <!-- No sugar -->
+                <div class="benefict-circle">
+                    <div class="img" id="img-3"></div>
+                    <div class="desc">No sugar</div>
+                </div>
+            </div>
+        </div>
     </header>
-    <main>
-      <h2>Welcome to Juicy Co.</h2>
-      <p>At <b>Juicy Co.</b>, we offer a range of 100% cold-pressed fruit juices made from surplus and rare fruits. Our juices contain no sugar, no sweeteners, and absolutely nothing artificial.</p>
-      <div class="juice-list">
-        <ul>
-          <li class="juice_product_img">
-            <img src="img/juice1.jpg" alt="Juice 1">
-            <h3>Orange and Pineapple Juice</h3>
-            <p class="price">$5.99</p>
-            <button>Add to Cart</button>
-          </li>
-          <li class="juice_product_img">
-            <img src="img/juice2.jpg" alt="Juice 2">
-            <h3>Carrot, Peach and ginger Juice</h3>
-            <p class="price">$6.99</p>
-            <button>Add to Cart</button>
-          </li>
-          <li class="juice_product_img">
-            <img src="img/juice3.jpg" alt="Juice 3">
-            <h3>Tropical Juice</h3>
-            <p class="price">$7.99</p>
-            <button>Add to Cart</button>
-          </li>
-        </ul>
-      </div>
-    </main>
+
+    <section id="about-us">
+        <h2>About us</h2>
+        <p>
+            Bienvenidos a Juizy, somos una empresa mexicana comprometida con la reducción del desperdicio alimentario y la 
+            promoción de hábitos saludables a través de la producción de jugos naturales, frescos y deliciosos.
+        </p>
+        <p>
+            Nuestra empresa nace como una respuesta a la problemática del desperdicio de alimentos en México y la necesidad de encontrar 
+            soluciones sostenibles para su aprovechamiento. Por eso, trabajamos con frutas que se encuentran cerca de su fecha 
+            de expiración y que de otra manera terminarían en la basura, para convertirlas en jugos mediante el método físico químico 
+            de cold press.
+        </p>
+        <p>
+            Nos enorgullece decir que nuestras frutas son de origen nacional y que trabajamos en estrecha colaboración con pequeños 
+            productores locales, fomentando el comercio justo y apoyando a la economía de la región.
+        </p>
+        <p>
+            Nos preocupamos por la calidad y frescura de nuestros productos, por lo que utilizamos únicamente frutas de la más alta 
+            calidad, frescas y naturales, sin aditivos, conservadores ni azúcares añadidos.
+        </p>
+        <p>
+            Nuestro compromiso es llevar a cada hogar mexicano una opción saludable y deliciosa de jugos naturales, mientras 
+            contribuimos a un futuro más sostenible para nuestro planeta. ¡Gracias por confiar en nosotros!
+        </p>
+    </section>
+
+    <section id="section-form">
+        <h2>Get in touch</h2>
+        <form action="">
+            <label for="name">Full name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <label for="phone">Phone number:</label>
+            <input type="text" name="phone-number" id="phone-number">
+            <label for="messages">Message:</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+
+        </form>
+    </section>
+
     <footer>
-      <p>&copy; Juicy Co. 2023</p>
+        <p>JUGUITOS COOL</p>
     </footer>
-    <script src="scripts.js"></script>
-  </body>
+</body>
 </html>
